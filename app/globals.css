@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Prime Green Clinic–inspired palette: deep green brand, fresh lime accent, soft mint surfaces. */
+@theme {
+  --color-brand: #0e7a4e;
+  --color-brand-dark: #0a5c3b;
+  --color-brand-50: #eef7f1;
+  --color-brand-100: #d7eedf;
+  --color-lime: #8cc63f;
+  --color-ink: #13261c;
+  --color-muted: #5a6b61;
+  --color-line: #e2ebe5;
+  --color-surface: #f6faf7;
+  --color-danger: #c0392b;
+  --color-warn: #d98a00;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
+  --radius-card: 18px;
+}
+
+html { color-scheme: light; }
+body { background: var(--color-surface); color: var(--color-ink); }
+
+@utility card { @apply bg-white rounded-[var(--radius-card)] border border-line shadow-[0_1px_2px_rgba(16,40,28,.04),0_8px_24px_rgba(16,40,28,.05)]; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold transition active:scale-[.98] disabled:opacity-50 disabled:cursor-not-allowed; }
+@utility btn-primary { @apply btn bg-brand text-white hover:bg-brand-dark; }
+@utility btn-lime { @apply btn bg-lime text-ink hover:brightness-95; }
+@utility btn-ghost { @apply btn border border-line bg-white text-ink hover:border-brand hover:text-brand; }
+@utility btn-danger { @apply btn bg-danger text-white hover:brightness-95; }
+@utility btn-sm { @apply px-3.5 py-1.5 text-sm; }
+@utility chip { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+@utility input { @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 outline-none focus:border-brand focus:ring-2 focus:ring-brand-100; }
+@utility label { @apply block text-sm font-semibold text-muted mb-1; }
+h1, h2, h3, .font-display { font-family: var(--font-display); }
+@utility container-x { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
